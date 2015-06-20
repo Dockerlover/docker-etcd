@@ -9,6 +9,9 @@ RUN cd etcd-v2.1.0-alpha.1-linux-amd64
 RUN mv etcd-v2.1.0-alpha.1-linux-amd64/etcd /usr/bin && mv etcd-v2.1.0-alpha.1-linux-amd64/etcdctl /usr/bin && rm -Rf etcd-v2.1.0-alpha.1-linux-amd64*
 # 配置supervisord
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+# 映射数据卷
 VOLUME ["/var/log/supervisor","/data"]
+# 暴露端口号
 EXPOSE 2379 2380 4001 7001
+# 启动supervisord
 CMD ["/usr/bin/supervisord"]
