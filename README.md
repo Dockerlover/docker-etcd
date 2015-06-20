@@ -17,7 +17,7 @@ Docker化Etcd
 
         docker run -it -d --name etcd -p 2379:2379 -p 2380:2380 -p 4001:4001 -p 7001:7001 docker-etcd
 
-- 进入容器
+- 测试是否安装正确
 
         docker run -it --rm docker-etcd
         etcdctl set mykey "this is awesome"
