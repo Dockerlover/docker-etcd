@@ -19,6 +19,6 @@ Docker化Etcd
 
 - 测试是否安装正确
 
-        docker run -it --rm docker-etcd
+        docker run -it --rm docker-etcd /bin/bash
         etcdctl set mykey "this is awesome"
         etcdctl get mykey
