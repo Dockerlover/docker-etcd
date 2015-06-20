@@ -3,10 +3,9 @@ FROM docker-ubuntu
 # 维护人员
 MAINTAINER  liuhong1.happy@163.com
 # 安装ETCD
-RUN curl -L  https://github.com/coreos/etcd/releases/download/v2.1.0-alpha.1/etcd-v2.1.0-alpha.1-linux-amd64.tar.gz -o etcd-v2.1.0-alpha.1-linux-amd64.tar.gz
-RUN tar xzvf etcd-v2.1.0-alpha.1-linux-amd64.tar.gz
-RUN cd etcd-v2.1.0-alpha.1-linux-amd64
-RUN mv etcd-v2.1.0-alpha.1-linux-amd64/etcd /usr/bin && mv etcd-v2.1.0-alpha.1-linux-amd64/etcdctl /usr/bin && rm -Rf etcd-v2.1.0-alpha.1-linux-amd64*
+RUN curl -L  https://github.com/coreos/etcd/releases/download/v2.1.0-alpha.1/etcd-v2.1.0-alpha.1-linux-amd64.tar.gz -o etcd-v2.1.0-alpha.1-linux-amd64.tar.gz \
+&& tar xzvf etcd-v2.1.0-alpha.1-linux-amd64.tar.gz \
+&& mv etcd-v2.1.0-alpha.1-linux-amd64/etcd /usr/bin && mv etcd-v2.1.0-alpha.1-linux-amd64/etcdctl /usr/bin && rm -Rf etcd-v2.1.0-alpha.1-linux-amd64*
 # 配置supervisord
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # 映射数据卷
