@@ -2,6 +2,8 @@
 FROM docker-ubuntu
 # 维护人员
 MAINTAINER  liuhong1.happy@163.com
+# 安装权限软件
+RUN apt-get install ca-certificates polarssl
 # 安装ETCD
 RUN curl -L  https://github.com/coreos/etcd/releases/download/v2.1.0-alpha.1/etcd-v2.1.0-alpha.1-linux-amd64.tar.gz -o etcd-v2.1.0-alpha.1-linux-amd64.tar.gz \
 && tar xzvf etcd-v2.1.0-alpha.1-linux-amd64.tar.gz \
