@@ -14,5 +14,6 @@ Docker化Etcd
         sh run.sh
 
 - 运行容器
-
-        docker run -it -d --name etcd -p 2379:2379 -p 2380:2380 -p 4001:4001 -p 7001:7001 docker-etcd
+        
+        HOST_IP=$(hostname --all-ip-addresses | awk '{print $1}')
+        docker run -it -d --name etcd -p 2379:2379 -e HOST_IP=$HOST_IP docker-etcd
