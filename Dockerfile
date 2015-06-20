@@ -8,6 +8,8 @@ ADD etcd /usr/bin
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # 映射数据卷
 VOLUME ["/var/log/supervisor","/data"]
+# 添加环境变量
+ENV HOST_IP http://127.0.0.1
 # 暴露端口号
 EXPOSE 2379 2380 4001 7001
 # 启动supervisord
