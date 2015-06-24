@@ -5,7 +5,6 @@ MAINTAINER  liuhong1.happy@163.com
 # 添加环境变量
 ENV USER_NAME admin
 ENV SERVICE_ID etcd
-ENV HOST_IP 127.0.0.1
 # 暴露端口号
 EXPOSE 4001 7001
 # 启动supervisord
