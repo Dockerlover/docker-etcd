@@ -11,7 +11,7 @@ Docker化Etcd
 
         git clone https://github.com/Dockerlover/docker-etcd.git
         cd docker-etcd
-        sh run.sh
+        docker build -t docker-etcd .
 
 - 运行容器
         
