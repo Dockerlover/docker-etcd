@@ -1,3 +1,1 @@
-curl -L  https://github.com/coreos/etcd/releases/download/v2.0.12/etcd-v2.0.12-linux-amd64.tar.gz -o etcd-v2.0.12-linux-amd64.tar.gz
-tar xzvf etcd-v2.0.12-linux-amd64.tar.gz etcd
-docker build -t docker-etcd .
+docker run -it -d --name etcd -p 4001:4001 -p 7001:7001 docker-etcd
